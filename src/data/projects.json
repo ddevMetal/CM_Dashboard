@@ -1,0 +1,67 @@
+[
+  {
+    "id": "cm-dashboard",
+    "name": "CM_Dashboard",
+    "status": "in-progress",
+    "description": "Central UI for CM_theBuilder platform. Shows all projects, CI/CD status, and pipeline health.",
+    "stack": ["React", "Vite", "Tailwind CSS"],
+    "machine": "GitHub Pages",
+    "endpoints": [
+      "https://ddevmetal.github.io/CM_Dashboard"
+    ],
+    "phases": [
+      { "phase": 0, "name": "Scaffold", "status": "complete" },
+      { "phase": 1, "name": "project_objective.md", "status": "complete" },
+      { "phase": 2, "name": "architecture.md", "status": "complete" },
+      { "phase": 3, "name": "projects.json", "status": "in-progress" },
+      { "phase": 4, "name": "Core components", "status": "planned" },
+      { "phase": 5, "name": "ProjectList + search + filter", "status": "planned" },
+      { "phase": 6, "name": "ProjectDetail", "status": "planned" },
+      { "phase": 7, "name": "NewProjectForm", "status": "planned" },
+      { "phase": 8, "name": "GitHub Pages deployment", "status": "planned" },
+      { "phase": 9, "name": "Connect to cm-project-registry API", "status": "blocked-v2" }
+    ],
+    "notes": "V1 is static. V2 connects to cm-project-registry API for live data."
+  },
+  {
+    "id": "cm-project-registry",
+    "name": "cm-project-registry",
+    "status": "live",
+    "description": "Central API that stores and serves all project data for the CM_theBuilder platform.",
+    "stack": ["Node.js", "Express", "JSON"],
+    "machine": "Machine 2 — Fedora (100.68.195.73)",
+    "endpoints": [
+      "http://100.68.195.73:3000/projects"
+    ],
+    "phases": [
+      { "phase": 1, "name": "API scaffold", "status": "complete" },
+      { "phase": 2, "name": "Projects endpoint", "status": "complete" },
+      { "phase": 3, "name": "Docker deployment", "status": "complete" },
+      { "phase": 4, "name": "API authentication", "status": "planned" },
+      { "phase": 5, "name": "Rate limiting", "status": "planned" },
+      { "phase": 6, "name": "CORS restriction", "status": "planned" }
+    ],
+    "notes": "Known security gaps — no auth, no rate limiting, CORS open. Fix before public release."
+  },
+  {
+    "id": "cm-thebuilder",
+    "name": "CM_theBuilder",
+    "status": "in-progress",
+    "description": "The parent platform. Governs all projects, conventions, agents, and documentation standards.",
+    "stack": ["Markdown", "GitHub Actions", "Docker", "Tailscale"],
+    "machine": "GitHub — devops_meng repo",
+    "endpoints": [
+      "https://github.com/ddevMetal/devops_meng"
+    ],
+    "phases": [
+      { "phase": 1, "name": "Platform conventions", "status": "complete" },
+      { "phase": 2, "name": "Agent config", "status": "complete" },
+      { "phase": 3, "name": "Security blueprint", "status": "complete" },
+      { "phase": 4, "name": "Dev environment docs", "status": "complete" },
+      { "phase": 5, "name": "Handoff system", "status": "complete" },
+      { "phase": 6, "name": "V2 dynamic dashboard", "status": "planned" },
+      { "phase": 7, "name": "V3 real-time dashboard", "status": "planned" }
+    ],
+    "notes": "AI-agnostic platform. Same docs work with any AI tool."
+  }
+]
