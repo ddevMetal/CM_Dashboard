@@ -1,7 +1,0 @@
-name: CD Pipeline
-on: [workflow_dispatch]
-jobs:
-  placeholder:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "CD pipeline placeholder — not yet implemented"
